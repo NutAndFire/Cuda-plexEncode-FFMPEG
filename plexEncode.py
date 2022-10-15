@@ -43,13 +43,13 @@ class Encoder:
             self.FFMPEG_PATH,
             self.OVERWRITE,
             '-vsync', self.VSYNC,
-            '-hwaccel', self.HWACCEL,
-            '-hwaccel_output_format', self.HWACCEL,
             '-i', input_file_path,
             '-f', self.OUTPUT_FILE_EXTENSION,            
             '-c:a', self.AUDIO_ENCODE,
             '-ac', self.CHANNEL,
             '-c:v', self.VIDEO_NVIDIA_ENCODE,
+            '-pix_fmt', self.PIXFMT,
+            '-b:v', '5M'
             '-metadata', self.METADATA_STRIP_TITLE,
             '-metadata', self.METADATA_STRIP_COMMENT,
             output_file_path
